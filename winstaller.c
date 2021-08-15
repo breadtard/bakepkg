@@ -49,6 +49,6 @@ int main(int argc, char* argv[]) {
 		}
 	} else {
 		print("Error: 7z installation not found. Ensure that there is a valid 7zip installation at C:/Program Files/7-Zip/\n");
-		return 80085 // haha yes
+		return 80085; // haha yes
 	}
 }

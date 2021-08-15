@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
 		}
 	 } else {
 		 printf("Error: Valid 7z installation not found. Ensure that you have 7zip installed.\n");
-		 return 80085 // haha yes
+		 return 80085; // haha yes
 	}
 }
 
