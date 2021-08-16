@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
 void banner(void) {
@@ -16,7 +17,7 @@ int main(int argc, char* argv[]) {
 	// Metadata
 	char PKG_NAME[] = "INTERNAL_BAKEPKG_REPLACEMENT_STRING_HOPEFULLY_THIS_WORKS";
 	char BPKG_VER[] = "INTERNAL_BAKEPKG_VERSION";
-	if (access("C:/Program Files/7-Zip/7z.exe", F_OK) == 0) { // check if file is real
+	if (_access("C:/Program Files/7-Zip/7z.exe", 0) == 0) { // check if file is real
 		if (argc > 2) {
 			printf("Error: Too many arguments. Do %s -h for more info.\n", argv[0]);
 			return 1;
@@ -48,7 +49,7 @@ int main(int argc, char* argv[]) {
 			}
 		}
 	} else {
-		print("Error: 7z installation not found. Ensure that there is a valid 7zip installation at C:/Program Files/7-Zip/\n");
+		printf("Error: 7z installation not found. Ensure that there is a valid 7zip installation at C:/Program Files/7-Zip/\n");
 		return 80085; // haha yes
 	}
 }

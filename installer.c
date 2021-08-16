@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
 void banner(void) {
@@ -17,7 +18,7 @@ int main(int argc, char* argv[]) {
 	char PKG_NAME[] = "INTERNAL_BAKEPKG_REPLACEMENT_STRING_HOPEFULLY_THIS_WORKS";
 	char BPKG_VER[] = "INTERNAL_BAKEPKG_VERSION";
 
-	if (system("which 7z") == 0) {
+	if (access("/usr/bin/7z", 0) == 0) {
 		if (argc > 2) {
 			printf("Error: Too many arguments. Do %s -h for more info.\n", argv[0]);
 			return 1;
