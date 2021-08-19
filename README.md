@@ -1,6 +1,10 @@
 # BakePKG
 ## A bad way of packaging applications.
 
+### Deprecation Notice
+BPKG will stop providing windows support at the end of this month. Any existing packages **will sitll work**, but the build scripts wont be updated, and will be removed from the repo
+
+**Linux Builds will still be updated**
 
 ### Introduction
 BakePKG is a package archive that can install itself without without a package manager.
@@ -18,6 +22,7 @@ BakePKG currently accepts these options:
 | `bakepkg`         | Tells you to run `bakepkg -h` for more info                    |
 | `bakepkg -h`      | Shows a help message, usage, and explains the bpkg file format |
 | `bakepkg install` | Installs the package                                           |
+| `bakepkg run`     | Installs the package into a temporary directory and starts it  |
 | `bakepkg --help`  | Yells at you. Its `-h` not `--help` you clown.                 |
 
 ### Package Creation (linux chad edition)
@@ -53,28 +58,14 @@ So, for example,
 bash mkbpkg-win.sh totally-legal-content microsoft-office-crack.7z
 ```
 
-### Package Creation (android chad edition)
-To create BakePKG packages for android, you need
-- termux
-- 7zip installed in termux
-- clang installed in termux
-- git installed in termux
-- atleast 5 iq
-
-basically you edit `installer.c`, replace on line 40
-```c
-char INTERNAL_7z_L[] = "/usr/bin/7z x ";
-```
-with
-```c
-char INTERNAL_7z_L[] = "7z x ";
-```
-and create the package the same way as you would in linux
-note that this may fail. if it does, sucks to suck
-
 ### DISCLAIMER
 All of the jokes in this readme, like `totally-legal-content microsoft-office-crack.7z` and `e621-desktop-client.7z`, are 
 # JOKES
 its a joke, dont sue me over this, i am not responsible for what people package, and i dont condone piracy.
+
+### Legal stuff
+BakePKG is licensed under the Bread License (which is basically the MIT License, **but** you cannot sell this code, compiled, uncompiled, or modified, **unless** it is bundled with other code which is licensed under a license that permits selling it.
+
+For a better explenation, see [The license file](LICENSE.md)
 
 :wq
